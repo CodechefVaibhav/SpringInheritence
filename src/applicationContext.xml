@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="beanTeamplate" abstract="true">
+       <property name="message1" value="Abstract Hello World!"/>
+       <property name="message2" value="Abstract Hello Second World!"/>
+       <property name="message3" value="Abstract Namaste India!"/>
+    </bean>
+
+	<bean id="helloworld" class="BeanDefinitionInheritance.HelloWorld" parent="beanTeamplate">
+	 <property name="message1" value="Hello India!"/>
+     <!-- <property name="message2" value="Namaste India!"/> -->
+	</bean>
+   
+    <bean id="helloIndia" class="BeanDefinitionInheritance.HelloIndia"
+       parent="beanTeamplate">
+       <property name="message1" value="Hello India!"/>
+       <property name="message3" value="Namaste India!"/>
+    </bean>
+
+</beans>
